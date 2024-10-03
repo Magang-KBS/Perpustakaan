@@ -30,3 +30,16 @@ Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggot
 Route::get('home' , [pageController::class, 'home'])->name('home');
 
     
+use App\Http\Controllers\KategoriController;
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/kategori',[kategoriController::class,'index'])->name('kategori.index');
+Route::get('/kategori/tambah',[kategoriController::class,'create'])->name('kategori.tambah_kat');
+Route::get('/kategori/edit/{id}', [kategoriController::class, 'edit'])->name('kategori.edit_kat');
+Route::post('/kategori/store', [kategoriController::class,'store'])->name('kategori.store');
+Route::put('/kategori/{id}',[kategoriController::class,'update'])->name('kategori.update');
+Route::delete('kategori/{id}',[kategoriController::class, 'destroy'])->name('kategori.destroy');
+

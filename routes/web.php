@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KategoriController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/kategori', [kategoriController::class,'loadAllCategory']);
+Route::get('/kategori/add-category', [kategoriController::class,'loadAddCategory']);

@@ -25,28 +25,35 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href="{{route('home')}}"> <i class="fa fa-home"></i> Home</a>
+                        <a class=" nav-link active" aria-current="page" href="{{ route('home') }}"> <i
+                                class="fa fa-home"></i> Home</a>
                     </li>
-                   
+
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href=""><i class="fa fa-user"></i><b>User</b> </a>
+                        <a class="nav-link active" aria-current="page" href=""><i
+                                class="fa fa-user"></i><b>User</b> </a>
                     </li>
-                  
+
                     <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href="{{route('anggota.index')}}"> <i class="fa fa-users"></i> Anggota</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-book"></i> Buku</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>  Pinjam</a>
+                        <a class=" nav-link active" aria-current="page" href="{{ route('anggota.index') }}"> <i
+                                class="fa fa-users"></i> Anggota</a>
                     </li>
                     <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-list"></i> Kategori</a>
+                        <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-book"></i>
+                            Buku</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>
+                            Pinjam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-list"></i>
+                            Kategori</a>
                     </li>
                 </ul>
                 <div class="nav-item">
-                    <a class="nav-link active" aria-current="page" onclick="return confirm('Yakin Logout?')" href=""><i class="fa fa-logout"></i> Logout</a>
+                    <a class="nav-link active" aria-current="page" onclick="return confirm('Yakin Logout?')"
+                        href=""><i class="fa fa-logout"></i> Logout</a>
                 </div>
             </div>
         </div>

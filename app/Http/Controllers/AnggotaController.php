@@ -48,15 +48,17 @@ class AnggotaController extends Controller
         return view('anggota.edit',compact('title','anggota'));
     }
 
-    public function update(Request $request, Anggota $anggota)
+    public function update(Request $request, $id)
     {
+        // dd($request->all(),$id);
+        $anggota = Anggota::find($id);
         $anggota->update($request->all());
         return redirect()->route('anggota.index')->with(['message'=>'Data Berhasil diperbarui']);
     }
 
-    public function destroy(Anggota $anggota)
+    public function destroy(Anggota $id)
     {
-        $anggota->delete();
+        $id->delete();
         return redirect()->route('anggota.index')->with(['message'=>'Data Berhasil dihapus!']);
     }
 }

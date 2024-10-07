@@ -34,7 +34,7 @@
                        
                   
                     <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-users"></i> Member</a>
+                        <a class=" nav-link active" aria-current="page" href="{{route('anggota.index')}}"> <i class="fa fa-users"></i> Anggota</a>
                     </li>
                     <li class="nav-item">
                         <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-book"></i> Buku</a>
@@ -43,10 +43,10 @@
                       <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>  Pinjam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href=""> <i class="fa fa-key"></i> Password</a>
+                        <a class="nav-link active" aria-current="page" href=""> <i class="fa fa-user"></i> Pengarang</a>
                     </li>
                     <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-list"></i> Kategori</a>
+                        <a class=" nav-link active" aria-current="page" href="{{route('kategori.index')}}"> <i class="fa fa-list"></i> Kategori</a>
                     </li>
                 </ul>
                 <div class="nav-item">

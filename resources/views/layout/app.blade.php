@@ -42,7 +42,10 @@
                       <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>  Pinjam</a>
                     </li>
                     <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-list"></i> Kategori</a>
+                        <a class="nav-link active" aria-current="page" href=""> <i class="fa fa-user"></i> Pengarang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" nav-link active" aria-current="page" href="{{route('kategori.index')}}"> <i class="fa fa-list"></i> Kategori</a>
                     </li>
                 </ul>
                 <div class="nav-item">

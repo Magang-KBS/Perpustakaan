@@ -59,4 +59,6 @@ class AnggotaController extends Controller
         $anggota->delete();
         return redirect()->route('anggota.index')->with(['message'=>'Data Berhasil dihapus!']);
     }
+
+    
 }

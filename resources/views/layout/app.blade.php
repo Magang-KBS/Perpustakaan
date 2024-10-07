@@ -31,7 +31,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href=""><i class="fa fa-user"></i><b>User</b> </a>
                     </li>
-                       
                   
                     <li class="nav-item">
                         <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-users"></i> Member</a>
@@ -41,6 +40,9 @@
                     </li>
                     <li class="nav-item">
                       <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>  Pinjam</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>  Pengarang</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href=""> <i class="fa fa-key"></i> Password</a>
@@ -56,7 +58,6 @@
         </div>
     </nav>
     <div class="container">
-        <h1>{{ $title }}</h1>
         @yield('content')
 
     </div>

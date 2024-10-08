@@ -31,7 +31,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href=""><i class="fa fa-user"></i><b>User</b> </a>
                     </li>
-                       
                   
                     <li class="nav-item">
                         <a class=" nav-link active" aria-current="page" href="{{route('anggota.index')}}"> <i class="fa fa-users"></i> Anggota</a>
@@ -53,7 +52,6 @@
         </div>
     </nav>
     <div class="container">
-        <h1>{{ $title }}</h1>
         @yield('content')
 
     </div>

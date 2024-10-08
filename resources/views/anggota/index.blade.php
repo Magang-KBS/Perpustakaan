@@ -12,7 +12,7 @@
                     <input class="form-control" name="q" value="{{$q}}" placeholder="Cari...">
                 </div>
                 <div class="col">
-                    <button class="btn btn-success">Refresh</button>
+                    <button class="btn btn-success">Cari</button>
                 </div>
                 
                 <div class="col">

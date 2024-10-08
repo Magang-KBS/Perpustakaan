@@ -9,13 +9,13 @@ use Illuminate\Http\Request;
 class PengarangController extends Controller
 {
     public function index(Request $request)
-    {   
+    {   $title = "Pengarang - Perpustakaan";
         $q = $request->query('q');
-        $pengarangs = pengarang::where('nama_pengarang','like','%'.$q.'%')
+        $pengarangs = Pengarang::where('nama_pengarang','like','%'.$q.'%')
             ->paginate(5)
             ->withQueryString();
         $no = $pengarangs->firstItem();
-        return view('pengarang.index', compact('pengarangs'));
+        return view('pengarang.index', compact('title', 'pengarangs', 'no', 'q'));
     }
 
     public function create()

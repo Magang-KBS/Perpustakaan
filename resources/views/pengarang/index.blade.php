@@ -1,20 +1,27 @@
 @extends('layout.app')
 @section('content')
+<head><title>{{ $title }}</title></head>
 @if (session()->has('message'))
     <p class="alert alert-info">{{ session('message') }}</p>
 @endif
 
 <div class="card mb-3">
     <div class="card-header">
-        <from class="row row-cols-auto g-1">
-            <div class="col">
-                <a class="btn btn-primary" href="{{route('pengarang.create')}}">Tambah</a>
-            </div>
-            <div>
-                <button class="btn btn-success">Refresh</button>
-            </div>
+        <div class="card-header">
+            <form class="row row-cols-auto g-1">
+                <div class="col">
+                    <input class="form-control" name="q" value="{{$q}}" placeholder="Cari...">
+                </div>
+                <div class="col">
+                    <button class="btn btn-success">Cari</button>
+                </div>
                 
-        </form>    
+                <div class="col">
+                    <a class="btn btn-primary" href="{{route('pengarang.create')}}">Tambah</a> 
+                </div>
+               
+            </form>
+        </div>
     </div>
     <div class="table-responsive">
         <table class="table table-hover table-bordered table-striped m-0">
@@ -22,8 +29,6 @@
                 <tr>
                     <th>NO</th>
                     <th>Nama Pengarang</th>
-                    <th>No Telepon</th>
-                    <th>Email</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -32,8 +37,7 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $pengarang->nama_pengarang }}</td>
-                    <td>{{$pengarang->no_telepon}}</td>
-                    <td>{{$pengarang->email}}</td>
+                    
                     <td> 
                         <form action="{{ route('pengarang.destroy', $pengarang->id) }}" method="POST" style="display: inline;">
                             @csrf

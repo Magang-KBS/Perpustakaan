@@ -27,6 +27,5 @@ Route::get('anggota/edit/{id}', [AnggotaController::class, 'edit'])->name('anggo
 Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
 
 
-Route::get('home' , [pageController::class, 'home'])->name('home');
+Route::get('' , [pageController::class, 'home'])->name('home');
 
-    

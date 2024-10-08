@@ -15,6 +15,7 @@ Route::get('/pengarang/create', [PengarangController::class,'create'])->name('pe
 Route::post('/pengarang/store', [PengarangController::class,'store'])->name('pengarang.store');
 Route::delete('/pengarang/{id}', [PengarangController::class, 'destroy'])->name('pengarang.destroy');
 Route::get('/pengarang/edit', [PengarangController::class, 'edit'])->name('pengarang.edit');
+Route::put("pengarang/{id}",[PengarangController::class,'update'])->name('pengarang.update');
 
 
 

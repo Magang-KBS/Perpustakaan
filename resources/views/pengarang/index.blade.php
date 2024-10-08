@@ -10,6 +10,10 @@
             <div class="col">
                 <a class="btn btn-primary" href="{{route('pengarang.create')}}">Tambah</a>
             </div>
+            <div>
+                <button class="btn btn-success">Refresh</button>
+            </div>
+                
         </form>    
     </div>
     <div class="table-responsive">
@@ -18,6 +22,9 @@
                 <tr>
                     <th>NO</th>
                     <th>Nama Pengarang</th>
+                    <th>No Telepon</th>
+                    <th>Email</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <?php $no = 1; ?>
@@ -25,6 +32,8 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $pengarang->nama_pengarang }}</td>
+                    <td>{{$pengarang->no_telepon}}</td>
+                    <td>{{$pengarang->email}}</td>
                     <td> 
                         <form action="{{ route('pengarang.destroy', $pengarang->id) }}" method="POST" style="display: inline;">
                             @csrf

@@ -5,7 +5,7 @@ use App\Http\Controllers\pageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PenerbitController;
-
+use App\Http\Controllers\PengarangController;
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -22,9 +22,7 @@ Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.in
 Route::get('/penerbit/create', [PenerbitController::class, 'create'])->name('penerbit.create');
 Route::post('/penerbit/store', [])->name('penerbit.store');
 
-Route::resource('anggota', AnggotaController::class);
-Route::delete('anggota', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
-use App\Http\Controllers\PengarangController;
+
 
 //Route::get('/', function () {
   //  return view('welcome');

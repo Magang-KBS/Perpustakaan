@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Penerbit extends Model
 {
     use HasFactory;
-    protected $table = 'penerbit';
-    protected $guarded = [];
+    protected $primaryKey = 'id';
+    protected $table = 'tb_penerbit';
+    protected $fillable = ['nama_penerbit'];
 }

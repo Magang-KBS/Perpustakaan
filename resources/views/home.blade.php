@@ -1,10 +1,11 @@
 @extends('layout.app')
 @section('content')
+<head><title>{{ $title }}</title></head>
     @auth
         <p>Selamat Datang <b>{{ Auth::user()->username}}</b></p>
     @endauth
-    {{-- <div class="row">
-        <div class="col-md-3">
+    <div class="row">
+        {{-- <div class="col-md-3">
             <div class="card bg-primary text-white">
                 <div class="card-header">
                     <i class="fa-solid fa-user"></i> User

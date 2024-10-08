@@ -9,7 +9,7 @@ class pageController extends Controller
 {
     public function home(){
         
-        $title = 'Home';
+        $title = 'Home - Perpustakaan';
         $jumlah_anggota = Anggota::count();
         return view('home', compact('title', 'jumlah_anggota'));
 

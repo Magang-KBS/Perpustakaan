@@ -9,7 +9,7 @@ class AnggotaController extends Controller
 {
     public function index(Request $request)
 {
-    $title = 'Anggota'; // Define the title
+    $title = 'Anggota - Perpustakaan'; // Define the title
     $q = $request->query('q');
     $anggotas = Anggota::where('nama_anggota', 'like', '%' . $q . '%')
         ->paginate(5)

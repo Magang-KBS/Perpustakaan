@@ -22,7 +22,7 @@
         <div class="table-responsive">
             <table class="table table-hover table-bordered table-striped m-0">
                 <thead>
-                    <tr class="text-center">
+                    <tr class="text-center fw-bold">
                         <th>ID Kategori</th>
                         <th>Nama Kategori</th>
                         <th>Deskripsi</th>

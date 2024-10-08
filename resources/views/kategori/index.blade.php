@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('title'){{'Kategori'}} @endsection
 @section('content')
 @if (session()->has('message'))
 <p class="alert alert-info">{{session('message')}}</p>

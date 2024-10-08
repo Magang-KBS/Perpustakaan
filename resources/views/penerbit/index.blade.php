@@ -1,3 +1,4 @@
+@section('title'){{'Kategori'}} @endsection
 <!DOCTYPE html>
 <html lang="en">
 

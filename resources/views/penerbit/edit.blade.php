@@ -12,15 +12,17 @@
                         </ul>
                     </div>
                 @endif
-                <form method="POST" action="{{ route('penerbit.store') }}">
+                <form method="POST" action="{{ route('penerbit.update', $penerbit->id) }}">
                     @csrf
+                    @method('put')
                     <div class="mb-3">
                         <label>Nama Penerbit</label>
-                        <input class="form-control" type="text" name="nama_penerbit" value="{{ old('nama_penerbit') }}">
+                        <input class="form-control" type="text" name="nama_penerbit"
+                            value="{{ old('nama_penerbit', $penerbit->nama_penerbit) }}">
                     </div>
                     <div class="mb-3">
                         <button class="btn btn-primary">Simpan</button>
-                        <a class="btn btn-danger" href="{{ route('anggota.index') }}">Kembali</a>
+                        <a class="btn btn-danger" href="{{ route('penerbit.index') }}">Kembali</a>
                     </div>
 
                 </form>

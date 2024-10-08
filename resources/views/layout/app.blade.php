@@ -33,23 +33,28 @@
                         <a class="nav-link active" aria-current="page" href=""><i
                                 class="fa fa-user"></i><b>User</b> </a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href="{{ route('anggota.index') }}"> <i
-                                class="fa fa-users"></i> Anggota</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-book"></i>
-                            Buku</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>
-                            Pinjam</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-list"></i>
-                            Kategori</a>
-                    </li>
+                    <<<<<<< HEAD=======>>>>>>> 16fccd3 (CRUD penerbit)
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href="{{ route('anggota.index') }}"> <i
+                                    class="fa fa-users"></i> Anggota</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-book"></i>
+                                Buku</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>
+                                Pinjam</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-list"></i>
+                                Kategori</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href="{{ route('penerbit.index') }}"> <i
+                                    class="fa-regular fa-building"></i>
+                                Penerbit</a>
+                        </li>
                 </ul>
                 <div class="nav-item">
                     <a class="nav-link active" aria-current="page" onclick="return confirm('Yakin Logout?')"

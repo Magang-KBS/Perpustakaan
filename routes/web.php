@@ -38,3 +38,15 @@ Route::get('/', function () {
 Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');
 Route::get('/penerbit/create', [PenerbitController::class, 'create'])->name('penerbit.create');
 Route::post('/penerbit/store', [])->name('penerbit.store');
+Route::post('/penerbit/store', [PenerbitController::class, 'store'])->name('penerbit.store');
+Route::get('penerbit/edit/{id}', [PenerbitController::class, 'edit'])->name('penerbit.edit');
+Route::delete('/penerbit/{id}', [PenerbitController::class, 'destroy'])->name('penerbit.destroy');
+Route::put('/penerbit/{id}', [PenerbitController::class, 'update'])->name('penerbit.update');
+
+
+Route::resource('anggota', AnggotaController::class);
+Route::delete('anggota', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
+Route::get('anggota/edit/{id}', [AnggotaController::class, 'edit'])->name('anggota.edit');
+
+
+Route::get('/', [pageController::class, 'home'])->name('home');

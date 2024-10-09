@@ -34,6 +34,8 @@ class PenerbitController extends Controller
     {
         $request->validate([
             'nama_penerbit' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
         ]);
         $penerbit = new Penerbit($request->all());
         $penerbit->save();

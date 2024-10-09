@@ -1,4 +1,5 @@
 @extends('layout.app')
+<title>Perpustakaan Penerbit</title>
 @section('content')
     @if (session()->has('message'))
         <p class="alert alert-info">{{ session('message') }}</p>
@@ -25,6 +26,8 @@
                     <tr>
                         <th>NO</th>
                         <th>Nama Penerbit</th>
+                        <th>Alamat</th>
+                        <th>Nomor Telepon</th>
                         <th>Aksi</th>
 
                     </tr>
@@ -35,6 +38,8 @@
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $penerbit->nama_penerbit }}</td>
+                        <td>{{ $penerbit->no_telp }}</td>
+                        <td>{{ $penerbit->alamat }}</td>
                         <td>
 
                             <a class="btn btn-sm btn-warning" href="{{ route('penerbit.edit', $penerbit->id) }}">Ubah</a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Anggota;
 use App\Models\Penerbit;
 use App\Models\User;
+use App\Models\Pengarang;
 use Illuminate\Http\Request;
 
 class pageController extends Controller
@@ -16,5 +17,10 @@ class pageController extends Controller
         $jumlah_anggota = Anggota::count();
         $jumlah_penerbit = Penerbit::count();
         return view('home', compact('title', 'jumlah_anggota', 'jumlah_penerbit'));
-    }
+    
+
+        $jumlah_pengarang = Pengarang::count();       
+        return view('home', compact('title', 'jumlah_anggota','jumlah_pengarang'));
+
+}
 }

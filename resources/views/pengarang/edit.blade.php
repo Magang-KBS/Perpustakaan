@@ -14,7 +14,7 @@
                 @endif
             <form method="POST" action="{{route('pengarang.update',$pengarang->id)}}">
             @csrf
-            @method('put')
+            @method('PUT')
             <div class="mb-3">
                 <label>Nama Pengarang</label>
                 <input class="form-control" type="text" name="nama_pengarang" value="{{old('nama_pengarang',$pengarang->nama_pengarang)}}">
@@ -27,6 +27,6 @@
             </form>
 
         </div>
-
+    
     </div>
 @endsection

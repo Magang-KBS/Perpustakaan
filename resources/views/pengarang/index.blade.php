@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('title'){{'Pengarang'}} @endsection
 @section('content')
 @if (session()->has('message'))
     <p class="alert alert-info">{{ session('message') }}</p>
@@ -11,9 +12,9 @@
                 <a class="btn btn-primary" href="{{route('pengarang.create')}}">Tambah</a>
             </div>
             <div>
-                <button class="btn btn-success">Refresh</button>
+                <button onclick="location.reload();" class="btn btn-success">Refresh</button>
             </div>
-                
+
         </form>    
     </div>
     <div class="table-responsive">
@@ -22,8 +23,6 @@
                 <tr>
                     <th>NO</th>
                     <th>Nama Pengarang</th>
-                    <th>No Telepon</th>
-                    <th>Email</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -32,15 +31,15 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $pengarang->nama_pengarang }}</td>
-                    <td>{{$pengarang->no_telepon}}</td>
-                    <td>{{$pengarang->email}}</td>
                     <td> 
+                        
+                        <a href="{{ route('pengarang.edit', $pengarang->id) }}" class="btn btn-warning btn-sm">Edit</a>
+
                         <form action="{{ route('pengarang.destroy', $pengarang->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus pengarang ini?')">Hapus</button>
                         </form>
-                        <a href="{{ route('pengarang.edit', $pengarang->id) }}" class="btn btn-warning btn-sm">Edit</a>
                     </td>
                 </tr>
                 @endforeach

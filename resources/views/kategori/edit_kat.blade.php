@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('title'){{'Edit Kategori'}} @endsection
 @section('content')
     <div class="row">
         <div class="col-md-6">

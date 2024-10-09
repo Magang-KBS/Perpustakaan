@@ -1,4 +1,5 @@
 @extends('layout.app')
+<title>Tambah Anggota</title>
 @section('content')
     <div class="row">
         <div class="col-md-6">
@@ -22,6 +23,7 @@
                         <label>Nomor Telepon</label>
                         <input class="form-control" type="number" name="no_telepon" value="{{ old('no_telepon') }}">
                     </div>
+
                     <div class="mb-3">
                         <label>NIM</label>
                         <input class="form-control"placeholder="Dosen bisa dikosongkan.." type="number" name="nim"

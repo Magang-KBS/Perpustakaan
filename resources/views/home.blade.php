@@ -1,10 +1,11 @@
 @extends('layout.app')
+<title>Perpustakaan Home</title>
 @section('content')
     @auth
-        <p>Selamat Datang <b>{{ Auth::user()->username}}</b></p>
+        <p>Selamat Datang <b>{{ Auth::user()->username }}</b></p>
     @endauth
-    {{-- <div class="row">
-        <div class="col-md-3">
+    <div class="row">
+        {{--  <div class="col-md-3">
             <div class="card bg-primary text-white">
                 <div class="card-header">
                     <i class="fa-solid fa-user"></i> User
@@ -13,10 +14,10 @@
                     <h3> {{ $jumlah_user }} Data user</h3>
                 </div>
                 <div class="card-footer text-end">
-                   
+
                     <a href="{{ route('user.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
-                  
-                    
+
+
                 </div>
             </div>
         </div> --}}
@@ -42,11 +43,27 @@
                     <h3> {{ $jumlah_anggota }} Anggota</h3>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="{{ route('anggota.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
+                    <a href="{{ route('anggota.index') }}"
+                        class="text-white
+                     text-decoration-none">Selengkapnya &raquo;</a>
                 </div>
             </div>
         </div>
-            {{-- <div class="col-md-3">
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-header">
+                    <i class="fa-solid fa-book"></i> Jumlah Penerbit
+                </div>
+                <div class="card-body">
+                    <h3>{{ $jumlah_penerbit }} Penerbit</h3>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="{{ route('penerbit.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
+                </div>
+            </div>
+        </div>
+
+        {{-- <div class="col-md-3">
                 <div class="card bg-warning text-white">
                     <div class="card-header">
                         <i class="fa-solid fa-list"></i> Jumlah Kategori
@@ -58,7 +75,7 @@
                         <a href="{{ route('kategori.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
                     </div>
                 </div>
-            </div> --}}
+            </div> 
     </div>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -95,4 +112,4 @@
             }]
         });
     </script> --}}
-@endsection
+    @endsection

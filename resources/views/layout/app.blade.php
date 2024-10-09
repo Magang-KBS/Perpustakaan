@@ -16,7 +16,6 @@
         .nav-link {
             position: relative;
         }
-
         .nav-link::after {
             content: '';
             position: absolute;
@@ -29,25 +28,19 @@
             transform-origin: bottom right;
             transition: transform 0.25s ease-out;
         }
-
         .nav-link:hover::after {
             transform: scaleX(1);
             transform-origin: bottom left;
         }
-
         .nav-link:hover {
             color: #007bff;
         }
-
         .nav-link.active::after {
-            transform: scaleX(1);
-            /* Untuk mempertahankan efek garis bawah */
+            transform: scaleX(1); /* Untuk mempertahankan efek garis bawah */
             transform-origin: bottom left;
         }
-
         .nav-link.active {
-            color: #007bff;
-            /* Warna teks saat menu aktif */
+            color: #007bff; /* Warna teks saat menu aktif */
         }
     </style>
 
@@ -65,9 +58,38 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('home*') ? 'active' : '' }}" aria-current="page"
-                            href="{{ route('home') }}">
+                        <a class="nav-link {{ Request::is('home') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">
                             <i class="fa fa-home"></i><b>Home</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('user*') ? 'active' : '' }}" href="">
+                            <i class="fa fa-user"></i><b>User</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('anggota*') ? 'active' : '' }}" href="{{ route('anggota.index') }}">
+                            <i class="fa fa-users"></i><b>Anggota</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('buku*') ? 'active' : '' }}" href="">
+                            <i class="fa fa-book"></i><b>Buku</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('pinjam*') ? 'active' : '' }}" href="">
+                            <i class="fa fa-tags"></i><b>Pinjam</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('pengarang*') ? 'active' : '' }}" href="{{ route('pengarang.index') }}">
+                            <i class="fa fa-user"></i><b>Pengarang</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('kategori*') ? 'active' : '' }}" href="">
+                            <i class="fa fa-list"></i><b>Kategori</b>
                         </a>
                     </li>
                     <<<<<<< HEAD=======>>>>>>> 16fccd3 (CRUD penerbit)
@@ -121,7 +143,7 @@
                         </li>
                 </ul>
                 <div class="nav-item">
-                    <a class="nav-link" onclick="return confirm('Yakin Logout?')" href=" ">
+                    <a class="nav-link" onclick="return confirm('Yakin Logout?')" href="">
                         <i class="fa fa-logout"></i><b>Logout</b>
                     </a>
                 </div>

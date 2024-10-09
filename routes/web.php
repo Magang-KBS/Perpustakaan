@@ -12,12 +12,13 @@ use App\Http\Controllers\PenerbitController;
 //});
 
 
-Route::get('/pengarang', [PengarangController::class, 'index'])->name('pengarang.index');
-Route::get('/pengarang/create', [PengarangController::class, 'create'])->name('pengarang.create');
-Route::post('/pengarang/store', [PengarangController::class, 'store'])->name('pengarang.store');
+Route::get('/pengarang', [PengarangController::class,'index'])->name('pengarang.index');
+Route::get('/pengarang/create', [PengarangController::class,'create'])->name('pengarang.create');
+Route::post('/pengarang/store', [PengarangController::class,'store'])->name('pengarang.store');
+Route::get('/pengarang/edit/{id}', [PengarangController::class, 'edit'])->name('pengarang.edit');
+Route::put("pengarang/update{id}",[PengarangController::class,'update'])->name('pengarang.update');
 Route::delete('/pengarang/{id}', [PengarangController::class, 'destroy'])->name('pengarang.destroy');
-Route::get('/pengarang/edit', [PengarangController::class, 'edit'])->name('pengarang.edit');
-Route::put("pengarang/{id}", [PengarangController::class, 'update'])->name('pengarang.update');
+
 
 
 Route::get('/', function () {

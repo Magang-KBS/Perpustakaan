@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\pageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PengarangController;
@@ -18,6 +19,7 @@ Route::get('/pengarang/edit', [PengarangController::class, 'edit'])->name('penga
 Route::put("pengarang/{id}",[PengarangController::class,'update'])->name('pengarang.update');
 
 
+Route::resource('buku', BukuController::class);
 
 Route::get("anggota",[AnggotaController::class,'index'])->name('anggota.index');
 Route::put("anggota/{id}",[AnggotaController::class,'update'])->name('anggota.update');

@@ -24,7 +24,12 @@
             </div>
             <div class="mb-3">
                 <label>Kategori</label>
-                <input class="form-control" type="text" name="kategori" value="{{old('kategori')}}">
+                <select class="form-control" name="kategori">
+                    <option value="">Pilih Kategori</option>
+                    @foreach($kategoris as $kateogri)
+                        <option value="{{ $kategori->nama_kategori }}" {{ old('kategori') == $kategori->nama_kategori ? 'selected' : '' }}>{{ $kategori->nama_kategori }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="mb-3">
                 <label>Pengarang</label>

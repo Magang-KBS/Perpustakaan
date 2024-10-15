@@ -1,5 +1,4 @@
 @extends('layout.app')
-<title>Edit Penerbit</title>
 @section('content')
     <div class="row">
         <div class="col-md-6">
@@ -20,16 +19,6 @@
                         <label>Nama Penerbit</label>
                         <input class="form-control" type="text" name="nama_penerbit"
                             value="{{ old('nama_penerbit', $penerbit->nama_penerbit) }}">
-                    </div>
-                    <div class="mb-3">
-                        <label>Nomor Telepon</label>
-                        <input class="form-control" type="number" name="no_telp"
-                            value="{{ old('no_telp', $penerbit->no_telp) }}">
-                    </div>
-                    <div class="mb-3">
-                        <label>Alamat</label>
-                        <input class="form-control" type="text" name="alamat"
-                            value="{{ old('alamat', $penerbit->alamat) }}">
                     </div>
                     <div class="mb-3">
                         <button class="btn btn-primary">Simpan</button>

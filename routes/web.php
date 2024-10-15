@@ -6,7 +6,7 @@ use App\Http\Controllers\pageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PengarangController;
 
-ari
+
 // Route::get('/', function () {
 //    return 'Welcome to the home page!';
 // });
@@ -27,12 +27,14 @@ Route::get('/denda/edit/{id}', [DendaController::class, 'edit'])->name('denda.ed
 Route::put("denda/update{id}",[DendaController::class,'update'])->name('denda.update');
 Route::delete('/denda/{id}', [DendaController::class, 'destroy'])->name('denda.destroy');
 
+Route::get("anggota", [AnggotaController::class, 'index'])->name('anggota.index');
+Route::put("anggota/{id}", [AnggotaController::class, 'update'])->name('anggota.update');
+Route::post("anggota", [AnggotaController::class, 'store'])->name('anggota.store');
+Route::delete('anggota/{id}', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
+Route::get('anggota/edit/{id}', [AnggotaController::class, 'edit'])->name('anggota.edit');
+Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
 
 
-Route::get("anggota",[AnggotaController::class,'index'])->name('anggota.index');
-Route::put("anggota/{id}",[AnggotaController::class,'update'])->name('anggota.update');
-Route::post("anggota",[AnggotaController::class,'store'])->name('anggota.store');
-=======
 use App\Http\Controllers\PenerbitController;
 
 //Route::get('/', function () {
@@ -58,13 +60,6 @@ Route::get('penerbit/edit/{id}', [PenerbitController::class, 'edit'])->name('pen
 Route::delete('/penerbit/{id}', [PenerbitController::class, 'destroy'])->name('penerbit.destroy');
 Route::put('/penerbit/{id}', [PenerbitController::class, 'update'])->name('penerbit.update');
 
-Route::get("anggota", [AnggotaController::class, 'index'])->name('anggota.index');
-Route::put("anggota/{id}", [AnggotaController::class, 'update'])->name('anggota.update');
-Route::post("anggota", [AnggotaController::class, 'store'])->name('anggota.store');
-develop
-Route::delete('anggota/{id}', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
-Route::get('anggota/edit/{id}', [AnggotaController::class, 'edit'])->name('anggota.edit');
-Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
 
 
 Route::get('home', [pageController::class, 'home'])->name('home');

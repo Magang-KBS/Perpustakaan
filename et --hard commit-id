@@ -1,0 +1,125 @@
+[33mcommit bb48fe01ed6d8a03c89b6f72c0a21e25cd80e627[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mari[m[33m, [m[1;31morigin/ari[m[33m)[m
+Merge: 8b51b6d 35b0391
+Author: AriSudarsa <arisudarsana01@gmail.com>
+Date:   Tue Oct 15 10:29:31 2024 +0800
+
+    Merge branch 'develop' into ari
+
+[33mcommit 8b51b6de78143d27827d184db619b5e5198316ee[m
+Author: ari <arisudarsana01@gmail.com>
+Date:   Tue Oct 15 10:16:28 2024 +0800
+
+    menambahkan fitur CRUD untuk denda
+
+[33mcommit 35b039139aa87f46ae1f819b63331532dafcbca0[m[33m ([m[1;31morigin/develop[m[33m)[m
+Author: Tomy <tomypaulus0@gmail.com>
+Date:   Wed Oct 9 18:38:01 2024 +0800
+
+    home
+
+[33mcommit 39b6bf9a08dd2f38536062cd4282e2ecccc74f60[m
+Author: Tomy <tomypaulus0@gmail.com>
+Date:   Tue Oct 8 10:56:31 2024 +0800
+
+    CRUD penerbit
+
+[33mcommit 8ad3576f3af5fc697e6c81d4dd31378ea9b490f8[m
+Author: Tomy <tomypaulus0@gmail.com>
+Date:   Thu Oct 3 17:55:13 2024 +0800
+
+    create penerbit
+
+[33mcommit 5f29afc50022d05cb38766b7a4ad77a12a8a61e9[m
+Author: ari <arisudarsana01@gmail.com>
+Date:   Wed Oct 9 17:40:25 2024 +0800
+
+    fungsi edit
+
+[33mcommit 1b2344c966505701404560887fa9a0064e4b320e[m
+Merge: 12b40a6 ed3d6e2
+Author: I Gede Miarta Yasa <45735303+IGedeMiarta@users.noreply.github.com>
+Date:   Tue Oct 8 10:37:16 2024 +0800
+
+    Merge pull request #9 from Magang-KBS/ari
+    
+    CRUD Pengarang
+
+[33mcommit ed3d6e2252ad9a472bdaad8dc550bb9e81b65d5c[m
+Author: ari <arisudarsana01@gmail.com>
+Date:   Tue Oct 8 10:31:52 2024 +0800
+
+    tambah form
+
+[33mcommit 0ed8dde7fbb6df788e04b7a3fdd74564a30c2fd2[m
+Merge: 0a61eb3 12b40a6
+Author: ari <arisudarsana01@gmail.com>
+Date:   Tue Oct 8 10:10:37 2024 +0800
+
+    terbaru
+
+[33mcommit 0a61eb3730a0ce3ed4b0c470e51217dcf58d6f46[m
+Author: ari <arisudarsana01@gmail.com>
+Date:   Mon Oct 7 17:47:32 2024 +0800
+
+    CRUD Pengarang
+
+[33mcommit 12b40a674987c4401992e1130b5fff861704dc32[m
+Merge: 260c574 32cc781
+Author: I Gede Miarta Yasa <45735303+IGedeMiarta@users.noreply.github.com>
+Date:   Mon Oct 7 17:44:15 2024 +0800
+
+    Merge pull request #5 from Magang-KBS/arsa
+    
+    Making Table Anggota
+
+[33mcommit 32cc7814593da068ac17e64d87ec1115658ffb9c[m
+Author: richkyu <kadekaryana92@gmail.com>
+Date:   Mon Oct 7 17:12:33 2024 +0800
+
+    Making Homepage/Dashboard
+
+[33mcommit d9c1f09c2dc8124eb06b7abf87d41c6f451c68e2[m
+Author: richkyu <kadekaryana92@gmail.com>
+Date:   Mon Oct 7 13:52:30 2024 +0800
+
+    Anggota Edit & Delete
+
+[33mcommit e038afa3d70cebb36fcf3a12b77d0fc46b2e1ffb[m
+Merge: 48119f6 260c574
+Author: ari <arisudarsana01@gmail.com>
+Date:   Thu Oct 3 16:42:34 2024 +0800
+
+    Merge branch 'develop' into ari
+
+[33mcommit 48119f68b107c2a5ec62efe5819798b7233e654d[m
+Author: ari <arisudarsana01@gmail.com>
+Date:   Thu Oct 3 16:36:36 2024 +0800
+
+    create pengarang
+
+[33mcommit 260c5745f7dd5412b958de66707ed2672e3f5166[m
+Merge: 5d0a28d e29b701
+Author: I Gede Miarta Yasa <45735303+IGedeMiarta@users.noreply.github.com>
+Date:   Thu Oct 3 16:32:41 2024 +0800
+
+    Merge pull request #2 from Magang-KBS/arsa
+    
+    Slicing UI & Create Anggota
+
+[33mcommit e29b7018f0d8455e5a642a861535b2a97c02bb98[m
+Author: richkyu <kadekaryana92@gmail.com>
+Date:   Thu Oct 3 16:27:29 2024 +0800
+
+    Slicing UI & Create Anggota
+
+[33mcommit 2f5a103aa3acce8447c843a18d0195294682573d[m
+Author: richkyu <kadekaryana92@gmail.com>
+Date:   Wed Oct 2 17:20:38 2024 +0800
+
+    add model & migration anggota
+
+[33mcommit 5d0a28d70a6cdd68c7347b15e8d194403ddb8a4c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: richkyu <kadekaryana92@gmail.com>
+Date:   Wed Oct 2 16:28:49 2024 +0800
+
+    fist initial laravel

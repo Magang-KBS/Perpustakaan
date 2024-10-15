@@ -29,9 +29,8 @@
                     </li>
                    
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href=""><i class="fa fa-user"></i><b>User</b> </a>
+                        <a class="nav-link active" aria-current="page" href="{{route('petugas.index')}}"><i class="fa fa-user"></i><b>Petugas</b> </a>
                     </li>
-                  
                     <li class="nav-item">
                         <a class=" nav-link active" aria-current="page" href="{{route('anggota.index')}}"> <i class="fa fa-users"></i> Anggota</a>
                     </li>

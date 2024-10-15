@@ -51,13 +51,13 @@ class kategoriController extends Controller
         return view('kategori.edit_kat',compact('title','kategori'));
     }
 
-    public function update(Request $request, kategori $id)
+    public function update(Request $request, Kategori $id)
     {
         $id->update($request->all());
         return redirect()->route('kategori.index')->with(['message'=>'Data Berhasil diperbarui']);
     }
 
-    public function destroy(kategori $id)
+    public function destroy(Kategori $id)
     {
         $id->delete();
         return redirect()->route('kategori.index')->with(['message'=>'Data Berhasil dihapus!']);

@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class Petugas extends Authenticatable
+{
+    use HasFactory;
+    protected $table ='petugas';
+    protected $primaryKey = 'id';
+    protected $fillable = ['nama_petugas', 'username','password','email_petugas'];
+
+    protected $hidden = [
+        'password', // Sembunyikan password saat mengakses model
+    ];
+}

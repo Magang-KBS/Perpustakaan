@@ -2,25 +2,10 @@
 @section('title'){{'HOME'}} @endsection
 @section('content')
     @auth
-        <p>Selamat Datang <b>{{ Auth::user()->username}}</b></p>
+        <p>Selamat Datang <b>{{ Auth::petugas()->nama_petugas}}</b></p>
     @endauth
         <div class="row">
-        {{--<div class="col-md-3">
-            <div class="card bg-primary text-white">
-                <div class="card-header">
-                    <i class="fa-solid fa-user"></i> User
-                </div>
-                <div class="card-body">
-                    <h3> {{ $jumlah_user }} Data user</h3>
-                </div>
-                <div class="card-footer text-end">
-                   
-                    <a href="{{ route('user.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
-                  
-                    
-                </div>
-            </div>
-        </div> --}}
+ 
         {{-- <div class="col-md-3">
             <div class="card bg-success text-white">
                 <div class="card-header">
@@ -34,6 +19,19 @@
                 </div>
             </div>
         </div> --}}
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-header">
+                    <i class="fa-solid fa-users"></i> Jumlah Petugas
+                </div>
+                <div class="card-body">
+                    <h3> {{ $jumlah_petugas}} Petugas</h3>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="{{ route('petugas.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
+                </div>
+            </div>
+        </div>
         <div class="col-md-3">
             <div class="card bg-danger text-white">
                 <div class="card-header">

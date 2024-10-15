@@ -5,6 +5,19 @@
         <p>Selamat Datang <b>{{ Auth::user()->username }}</b></p>
     @endauth
     <div class="row">
+    <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-header">
+                    <i class="fa-solid fa-users"></i> Jumlah Denda
+                </div>
+                <div class="card-body">
+                    <h3> {{ $jumlah_denda }} Denda</h3>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="{{ route('denda.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
+                </div>
+            </div>
+        </div>
     {{-- <div class="col-md-3">
             <div class="card bg-primary text-white">
                 <div class="card-header">
@@ -88,7 +101,8 @@
                         <a href="{{ route('kategori.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
                     </div>
                 </div>
-            </div> 
+            </div> --}}
+           
     </div>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>

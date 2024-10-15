@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\DendaController;
 use App\Http\Controllers\pageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PengarangController;
@@ -19,6 +20,12 @@ Route::get('/pengarang/edit/{id}', [PengarangController::class, 'edit'])->name('
 Route::put("pengarang/update{id}",[PengarangController::class,'update'])->name('pengarang.update');
 Route::delete('/pengarang/{id}', [PengarangController::class, 'destroy'])->name('pengarang.destroy');
 
+Route::get('/denda', [DendaController::class,'index'])->name('denda.index');
+Route::get('/denda/create', [DendaController::class,'create'])->name('denda.create');
+Route::post('/denda/store', [DendaController::class,'store'])->name('denda.store');
+Route::get('/denda/edit/{id}', [DendaController::class, 'edit'])->name('denda.edit');
+Route::put("denda/update{id}",[DendaController::class,'update'])->name('denda.update');
+Route::delete('/denda/{id}', [DendaController::class, 'destroy'])->name('denda.destroy');
 
 
 Route::get('/', function () {

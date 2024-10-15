@@ -11,9 +11,8 @@ use Illuminate\Http\Request;
 
 class pageController extends Controller
 {
-    public function home()
-    {
-
+    public function home(){
+        
         $title = 'Home';
         $jumlah_anggota = Anggota::count();
         $jumlah_penerbit = Penerbit::count();
@@ -30,3 +29,6 @@ class pageController extends Controller
 
         $jumlah_penerbit = Penerbit::count();
         return view('home', compact('title', 'jumlah_anggota', 'jumlah_penerbit'));
+        return view('home', compact('title', 'jumlah_anggota'));
+
+

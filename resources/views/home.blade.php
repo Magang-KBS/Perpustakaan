@@ -1,8 +1,7 @@
 @extends('layout.app')
-<title>Perpustakaan Home</title>
 @section('content')
     @auth
-        <p>Selamat Datang <b>{{ Auth::user()->username }}</b></p>
+        <p>Selamat Datang <b>{{ Auth::user()->username}}</b></p>
     @endauth
     <div class="row">
     <div class="col-md-3">
@@ -27,10 +26,10 @@
                     <h3> {{ $jumlah_user }} Data user</h3>
                 </div>
                 <div class="card-footer text-end">
-
+                   
                     <a href="{{ route('user.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
-
-
+                  
+                    
                 </div>
             </div>
         </div> --}}
@@ -56,9 +55,7 @@
                     <h3> {{ $jumlah_anggota }} Anggota</h3>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="{{ route('anggota.index') }}"
-                        class="text-white
-                     text-decoration-none">Selengkapnya &raquo;</a>
+                    <a href="{{ route('anggota.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
                 </div>
             </div>
         </div>
@@ -139,4 +136,4 @@
             }]
         });
     </script> --}}
-    @endsection
+@endsection

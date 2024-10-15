@@ -64,5 +64,11 @@ class PengarangController extends Controller
         $pengarang = Pengarang::find($id);
         $pengarang->update($request->all());
         return redirect()->route('pengarang.index')->with(['message'=>'Data Berhasil diperbarui']);
+
+        $id = 'Ganti Pengarang';
+        $pengarang = Pengarang::where('id,$id')->first();
+
+        return view('pengarang.index', compact('id', 'pengarang'));
+
     }
 }

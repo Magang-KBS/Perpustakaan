@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class PengarangController extends Controller
 {
     public function index(Request $request)
-    {   
+    {
         $q = $request->query('q');
-        $pengarangs = pengarang::where('nama_pengarang','like','%'.$q.'%')
+        $pengarangs = pengarang::where('nama_pengarang', 'like', '%' . $q . '%')
             ->paginate(5)
             ->withQueryString();
         $no = $pengarangs->firstItem();
@@ -29,11 +29,11 @@ class PengarangController extends Controller
         $request->validate([
             'nama_pengarang' => 'required|string|max:255'
         ]);
-    
+
         // Menyimpan data ke database
         $pengarang =  new Pengarang($request->only('nama_pengarang', 'id'));
         $pengarang->save();
-    
+
         return redirect()->route('pengarang.index')->with('message', 'Pengarang berhasil ditambahkan!');
     }
 
@@ -48,8 +48,6 @@ class PengarangController extends Controller
         $id = 'Ganti Pengarang';
         $pengarang = Pengarang::where('id,$id')->first();
 
-        return view('pengarang.index', compact('id','pengarang'));
+        return view('pengarang.index', compact('id', 'pengarang'));
     }
-
 }
-

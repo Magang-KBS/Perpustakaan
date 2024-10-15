@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('penerbit', function (Blueprint $table) {
+
+        Schema::create('tb_penerbit', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_penerbit')->nullable();
+            $table->string('nama_penerbit');
+            $table->string('alamat');  // Kolom alamat harus ada di sini
+            $table->string('no_telp');
             $table->timestamps();
         });
     }

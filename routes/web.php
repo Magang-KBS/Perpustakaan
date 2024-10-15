@@ -5,7 +5,6 @@ use App\Http\Controllers\DendaController;
 use App\Http\Controllers\pageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PengarangController;
-
 use App\Http\Controllers\PenerbitController;
 
 // Route::get('/', function () {
@@ -71,10 +70,6 @@ Route::get('penerbit/edit/{id}', [PenerbitController::class, 'edit'])->name('pen
 Route::delete('/penerbit/{id}', [PenerbitController::class, 'destroy'])->name('penerbit.destroy');
 Route::put('/penerbit/{id}', [PenerbitController::class, 'update'])->name('penerbit.update');
 
-
-Route::resource('anggota', AnggotaController::class);
-Route::delete('anggota', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
-Route::get('anggota/edit/{id}', [AnggotaController::class, 'edit'])->name('anggota.edit');
 
 
 Route::get('/', [pageController::class, 'home'])->name('home');

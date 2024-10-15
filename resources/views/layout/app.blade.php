@@ -113,14 +113,19 @@
                                 <a class="nav-link {{ Request::is('denda*') ? 'active' : '' }}" href="{{ route('denda.index') }}">
                                     <i class="fa fa-dollar-sign"></i><b>Denda</b>
                                 </a>
+                            <li class="nav-item">
+                                <a class=" nav-link active" aria-current="page" href="{{ route('penerbit.index') }}"> <i
+                                        class="fa-regular fa-building"></i>
+                                    Penerbit</a>
                             </li>
-                            <a class="nav-link" onclick="return confirm('Yakin Logout?')" href=" ">
-                                <i class="fa fa-logout"></i><b>Logout</b>
-                            </a>
+                        </ul>
+                        <div class="nav-item">
+                            <a class="nav-link active" aria-current="page" onclick="return confirm('Yakin Logout?')"
+                                href=""><i class="fa fa-logout"></i> Logout</a>
                         </div>
+                    
                     </div>
-                </div>
-            </nav>
+                </nav>
             <div class="container">
                 @yield('content')
             </div>

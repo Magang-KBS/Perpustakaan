@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_anggota', function (Blueprint $table) {
+
+        Schema::create('tb_penerbit', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_anggota');
-            $table->string('no_telepon', 15);
-            $table->string('nim')->nullable();
-            $table->string('email');
+            $table->string('nama_penerbit');
+            $table->string('alamat');  // Kolom alamat harus ada di sini
+            $table->string('no_telp');
             $table->timestamps();
         });
     }
@@ -24,5 +24,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void {}
+    public function down(): void
+    {
+        Schema::dropIfExists('penerbit');
+    }
 };

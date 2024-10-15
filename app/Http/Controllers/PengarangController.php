@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class PengarangController extends Controller
 {
     public function index(Request $request)
-    {   
+    {
         $q = $request->query('q');
-        $pengarangs = pengarang::where('nama_pengarang','like','%'.$q.'%')
+        $pengarangs = pengarang::where('nama_pengarang', 'like', '%' . $q . '%')
             ->paginate(5)
             ->withQueryString();
         $no = $pengarangs->firstItem();
@@ -31,11 +31,11 @@ class PengarangController extends Controller
             'no_telepon' => 'nullable|string',
             'email' => 'nullable|email',
         ]);
-    
+
         // Menyimpan data ke database
         $pengarang =  new Pengarang($request->only('nama_pengarang', 'id', 'no_telepon', 'email'));
         $pengarang->save();
-    
+
         return redirect()->route('pengarang.index')->with('message', 'Pengarang berhasil ditambahkan!');
     }
 
@@ -47,6 +47,7 @@ class PengarangController extends Controller
 
     public function edit($id)
     {
+ari
         // Cari pengarang berdasarkan ID
         $pengarang = Pengarang::find($id);
     
@@ -64,6 +65,11 @@ class PengarangController extends Controller
         $pengarang = Pengarang::find($id);
         $pengarang->update($request->all());
         return redirect()->route('pengarang.index')->with(['message'=>'Data Berhasil diperbarui']);
+=======
+        $id = 'Ganti Pengarang';
+        $pengarang = Pengarang::where('id,$id')->first();
+
+        return view('pengarang.index', compact('id', 'pengarang'));
+ develop
     }
 }
-

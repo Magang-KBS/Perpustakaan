@@ -1,6 +1,5 @@
 @extends('layout.app')
-<title>Perpustakaan Anggota</title>
-
+<title>Perpustakaan Penerbit</title>
 @section('content')
     @if (session()->has('message'))
         <p class="alert alert-info">{{ session('message') }}</p>
@@ -16,7 +15,7 @@
                 </div>
 
                 <div class="col">
-                    <a class="btn btn-primary" href="{{ route('anggota.create') }}">Tambah</a>
+                    <a class="btn btn-primary" href="{{ route('penerbit.create') }}">Tambah</a>
                 </div>
 
             </form>
@@ -26,28 +25,26 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>Nama Anggota</th>
-                        <th>No Telepon</th>
-                        <th>NIM</th>
-                        <th>Email</th>
+                        <th>Nama Penerbit</th>
+                        <th>Alamat</th>
+                        <th>Nomor Telepon</th>
                         <th>Aksi</th>
 
                     </tr>
                 </thead>
                 <?php //$no = 1;
                 ?>
-                @foreach ($anggotas as $anggota)
+                @foreach ($penerbits as $penerbit)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $anggota->nama_anggota }}</td>
-                        <td>{{ $anggota->no_telepon }}</td>
-                        <td>{{ $anggota->nim }}</td>
-                        <td>{{ $anggota->email }}</td>
+                        <td>{{ $penerbit->nama_penerbit }}</td>
+                        <td>{{ $penerbit->no_telp }}</td>
+                        <td>{{ $penerbit->alamat }}</td>
                         <td>
 
-                            <a class="btn btn-sm btn-warning" href="{{ route('anggota.edit', $anggota->id) }}">Ubah</a>
+                            <a class="btn btn-sm btn-warning" href="{{ route('penerbit.edit', $penerbit->id) }}">Ubah</a>
 
-                            <form method="POST" class="d-inline" action="{{ route('anggota.destroy', $anggota) }}">
+                            <form method="POST" class="d-inline" action="{{ route('penerbit.destroy', $penerbit) }}">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button>
@@ -62,9 +59,9 @@
             </table>
 
         </div>
-        @if ($anggotas->hasPages())
+        @if ($penerbits->hasPages())
             <div class="card-footer">
-                {{ $anggotas->links() }}
+                {{ $penerbits->links() }}
             </div>
         @endif
     </div>

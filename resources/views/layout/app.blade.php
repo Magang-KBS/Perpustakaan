@@ -70,61 +70,47 @@
                             <i class="fa fa-home"></i><b>Home</b>
                         </a>
                     </li>
-                    <<<<<<< HEAD=======>>>>>>> 16fccd3 (CRUD penerbit)
-                        <li class="nav-item">
-                            <a class=" nav-link active" aria-current="page" href="{{ route('anggota.index') }}"> <i
-                                    class="fa fa-users"></i> Anggota</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-book"></i>
-                                Buku</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>
-                                Pinjam</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-list"></i>
-                                Kategori</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class=" nav-link active" aria-current="page" href="{{ route('penerbit.index') }}"> <i
-                                    class="fa-regular fa-building"></i>
-                                Penerbit</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::is('anggota*') ? 'active' : '' }}"
-                                href="{{ route('anggota.index') }}">
-                                <i class="fa fa-users"></i><b>Anggota</b>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::is('penerbit*') ? 'active' : '' }}"
-                                href="{{ route('penerbit.index') }}">
-                                <i class="fa fa-book"></i><b>Penerbit</b>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::is('buku*') ? 'active' : '' }}" href=" ">
-                                <i class="fa fa-book-open"></i><b>Buku</b>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::is('pengarang*') ? 'active' : '' }}" href=" ">
-                                <i class="fa fa-user"></i><b>Pengarang</b>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::is('kategori*') ? 'active' : '' }}" href=" ">
-                                <i class="fa fa-list"></i><b>Kategori</b>
-                            </a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('peminjaman*') ? 'active' : '' }}" aria-current="page"
+                            href="{{ route('peminjaman.index') }}">
+                            <i class="fa fa-handshake"></i><b>Peminjaman</b>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('anggota*') ? 'active' : '' }}"
+                            href="{{ route('anggota.index') }}">
+                            <i class="fa fa-users"></i><b>Anggota</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('penerbit*') ? 'active' : '' }}"
+                            href="{{ route('penerbit.index') }}">
+                            <i class="fa fa-book"></i><b>Penerbit</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('buku*') ? 'active' : '' }}" href=" ">
+                            <i class="fa fa-book-open"></i><b>Buku</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('pengarang*') ? 'active' : '' }}" href="  ">
+                            <i class="fa fa-user"></i><b>Pengarang</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('kategori*') ? 'active' : '' }}" href=" ">
+                            <i class="fa fa-list"></i><b>Kategori</b>
+                        </a>
+                    </li>
                 </ul>
-                <div class="nav-item">
+                <form action="{{ route('logout') }}" method="POST">
                     <a class="nav-link" onclick="return confirm('Yakin Logout?')" href=" ">
-                        <i class="fa fa-logout"></i><b>Logout</b>
-                    </a>
-                </div>
+                        @csrf
+                        <button type="submit">Logout</button>
+                </form>
+
             </div>
         </div>
     </nav>

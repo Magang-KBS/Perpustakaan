@@ -21,10 +21,10 @@
                 </div>
             </div>
         </div> --}}
-        {{-- <div class="col-md-3">
-            <div class="card bg-success text-white">
+        <div class="col-md-3">
+            <div style="background-color: rgb(128, 0, 117)" class="card text-white">
                 <div class="card-header">
-                    <i class="fa-solid fa-book"></i> Total Peminjaman
+                    <i class="fa-solid fa-handshake"></i> Total Peminjaman
                 </div>
                 <div class="card-body">
                     <h3> {{ $total_peminjaman }} Peminjaman</h3>
@@ -33,7 +33,7 @@
                     <a href="{{ route('peminjaman.index') }}" class="text-white text-decoration-none">Selengkapnya &raquo;</a>
                 </div>
             </div>
-        </div> --}}
+        </div>
         <div class="col-md-3">
             <div class="card bg-danger text-white">
                 <div class="card-header">
@@ -62,6 +62,22 @@
                 </div>
             </div>
         </div>
+        {{--  
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-header">
+                    <i class="fa-solid fa-book"></i> Jumlah Pengarang
+                </div>
+                <div class="card-body">
+                    <h3>{{ $jumlah_pengarang }} Pengarang</h3>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="{{ route('pengarang.index') }}" class="text-white text-decoration-none">Selengkapnya
+                        &raquo;</a>
+                </div>
+            </div>
+        </div>
+        --}}
 
         {{-- <div class="col-md-3">
                 <div class="card bg-warning text-white">

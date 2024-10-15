@@ -26,5 +26,7 @@ class pageController extends Controller
         $jumlah_denda = Denda::count();       
         return view('home', compact('title', 'jumlah_anggota','jumlah_pengarang','jumlah_denda'));
 
-}
-}
+}}
+
+        $jumlah_penerbit = Penerbit::count();
+        return view('home', compact('title', 'jumlah_anggota', 'jumlah_penerbit'));

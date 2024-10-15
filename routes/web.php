@@ -9,8 +9,6 @@ use App\Http\Controllers\PengarangController;
 use App\Http\Controllers\petugasController;
 use App\Http\Controllers\Auth\PetugasLoginController;
 
-use App\Http\Controllers\PenerbitController;
-
 //Route::get('/', function () {
 //  return view('welcome');
 //});

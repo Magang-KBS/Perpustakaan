@@ -8,6 +8,10 @@ use App\Http\Controllers\PengarangController;
 
 use App\Http\Controllers\PenerbitController;
 
+// Route::get('/', function () {
+//    return 'Welcome to the home page!';
+// });
+
 //Route::get('/', function () {
 //  return view('welcome');
 //});
@@ -27,6 +31,12 @@ Route::get('/denda/edit/{id}', [DendaController::class, 'edit'])->name('denda.ed
 Route::put("denda/update{id}",[DendaController::class,'update'])->name('denda.update');
 Route::delete('/denda/{id}', [DendaController::class, 'destroy'])->name('denda.destroy');
 
+Route::get("anggota", [AnggotaController::class, 'index'])->name('anggota.index');
+Route::put("anggota/{id}", [AnggotaController::class, 'update'])->name('anggota.update');
+Route::post("anggota", [AnggotaController::class, 'store'])->name('anggota.store');
+Route::delete('anggota/{id}', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
+Route::get('anggota/edit/{id}', [AnggotaController::class, 'edit'])->name('anggota.edit');
+Route::get('anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
 
 Route::get('/', function () {
   return view('welcome');

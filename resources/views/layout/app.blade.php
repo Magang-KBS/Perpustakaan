@@ -92,6 +92,11 @@
                             <i class="fa fa-list"></i><b>Kategori</b>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('denda*') ? 'active' : '' }}" href="{{ route('denda.index') }}">
+                            <i class="fa fa-dollar-sign"></i><b>Denda</b>
+                        </a>
+                    </li>
                 </ul>
                 <div class="nav-item">
                     <a class="nav-link" onclick="return confirm('Yakin Logout?')" href="">

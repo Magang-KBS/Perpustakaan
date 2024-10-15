@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title'){{'Pengarang'}} @endsection
+@section('title'){{'Denda'}} @endsection
 @section('content')
 @if (session()->has('message'))
     <p class="alert alert-info">{{ session('message') }}</p>
@@ -9,7 +9,7 @@
     <div class="card-header">
         <from class="row row-cols-auto g-1">
             <div class="col">
-                <a class="btn btn-primary" href="{{route('pengarang.create')}}">Tambah</a>
+                <a class="btn btn-primary" href="{{route('denda.create')}}">Tambah</a>
             </div>
             <div>
                 <button onclick="location.reload();" class="btn btn-success">Refresh</button>
@@ -22,33 +22,35 @@
             <thead>
                 <tr>
                     <th>NO</th>
-                    <th>Nama Pengarang</th>
-                    <th>No Telepon</th>
-                    <th>Email</th>
+                    <th>ID Pinjam</th>
+                    <th>ID Anggota</th>
+                    <th>Jumlah (Rp)</th>
+                    <th>Notes</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <?php $no = 1; ?>
-                @foreach ($pengarangs as $pengarang)
+                @foreach ($dendas as $denda)
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ $pengarang->nama_pengarang }}</td>
-                    <td>{{ $pengarang->no_telepon }}</td>
-                    <td>{{ $pengarang->email }}</td>
+                    <td>{{ $denda->id_pinjam }}</td>
+                    <td>{{ $denda->id_anggota }}</td>
+                    <td>{{ $denda->jumlah_denda }}</td>
+                    <td>{{ $denda->notes }}</td>
                     <td> 
                         
-                        <a href="{{ route('pengarang.edit', $pengarang->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{{ route('denda.edit', $denda->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
-                        <form action="{{ route('pengarang.destroy', $pengarang->id) }}" method="POST" style="display: inline;">
+                        <form action="{{ route('denda.destroy', $denda->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus pengarang ini?')">Hapus</button>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data denda ini?')">Hapus</button>
                         </form>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
-            {{ $pengarangs->links() }}
+            {{ $dendas->links() }}
         </table>
     </div>
 </div>

@@ -9,6 +9,6 @@ class Pengarang extends Model
 {
 
     use HasFactory;
-    protected $table = 'pengarang';
-    protected $guarded = []; 
+    protected $table ='pengarang';
+    protected $fillable = ['nama_pengarang', 'email', 'no_telepon'];
 }

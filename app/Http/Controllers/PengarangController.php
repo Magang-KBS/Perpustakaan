@@ -27,11 +27,13 @@ class PengarangController extends Controller
     {
         // Validasi input
         $request->validate([
-            'nama_pengarang' => 'required|string|max:255'
+            'nama_pengarang' => 'required|string|max:255',
+            'no_telepon' => 'nullable|string',
+            'email' => 'nullable|email',
         ]);
     
         // Menyimpan data ke database
-        $pengarang =  new Pengarang($request->only('nama_pengarang', 'id'));
+        $pengarang =  new Pengarang($request->only('nama_pengarang', 'id', 'no_telepon', 'email'));
         $pengarang->save();
     
         return redirect()->route('pengarang.index')->with('message', 'Pengarang berhasil ditambahkan!');

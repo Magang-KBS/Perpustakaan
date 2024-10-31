@@ -16,12 +16,13 @@
             <form method="POST" action="{{ route('denda.store') }}">
                 @csrf
                 <div class="mb-3">
-                    <label for="id_pinjam">ID Pinjam:</label>
-                    <input class="form-control" type="number" name="id_pinjam" id="id_pinjam" required>
-                </div>
-                <div class="mb-3">
-                    <label for="id_anggota">ID Anggota:</label>
-                    <input class="form-control" type="number" name="id_anggota" id="id_anggota" required>
+                    <label>Nama Anggota</label>
+                        <select class="form-control" name="id_anggota" id="id_anggota" required>
+                            <option value="">Pilih Nama Anggota</option>
+                                @foreach ($anggota as $item)
+                                    <option value="{{ $item->id }}">{{ $item->nama_anggota }}</option>
+                                @endforeach
+                        </select>
                 </div>
                 <div class="mb-3">
                     <label for="jumlah_denda">Jumlah Denda:</label>

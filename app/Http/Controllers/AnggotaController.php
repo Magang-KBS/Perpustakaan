@@ -9,13 +9,13 @@ class AnggotaController extends Controller
 {
     public function index(Request $request)
 {
-    $title = 'Anggota'; // Define the title
+    $title = 'Anggota'; 
     $q = $request->query('q');
     $anggotas = Anggota::where('nama_anggota', 'like', '%' . $q . '%')
         ->paginate(5)
         ->withQueryString();
     $no = $anggotas->firstItem();        
-    return view('anggota.index', compact('title', 'anggotas', 'q', 'no')); // Pass the $title variable
+    return view('anggota.index', compact('title', 'anggotas', 'q', 'no')); 
 }
 
     public function create()

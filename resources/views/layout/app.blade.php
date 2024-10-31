@@ -38,11 +38,11 @@
                     color: #007bff;
                 }
                 .nav-link.active::after {
-                    transform: scaleX(1); /* Untuk mempertahankan efek garis bawah */
+                    transform: scaleX(1); 
                     transform-origin: bottom left;
                 }
                 .nav-link.active {
-                    color: #007bff; /* Warna teks saat menu aktif */
+                    color: #007bff; 
                 }
                 .nav-link:hover {
                     color: #007bff;
@@ -50,14 +50,11 @@
 
                 .nav-link.active::after {
                     transform: scaleX(1);
-                    /* Untuk mempertahankan efek garis bawah */
                     transform-origin: bottom left;
                 }
 
                 .nav-link.active {
-                    color: #007bff;
-                    /* Warna teks saat menu aktif */
-        
+                    color: #007bff;        
                 }
             </style>
 
@@ -75,59 +72,64 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('home') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">
-                                    <i class="fa fa-home"></i><b>Home</b>
+                                <a class="nav-link {{ Request::is('home*') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">
+                                    <i class="fa fa-home"></i><b> Home</b>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('user*') ? 'active' : '' }}" href="">
-                                    <i class="fa fa-user"></i><b>User</b>
+                                <a class="nav-link {{ Request::is('user*') ? 'active' : '' }}"  href="{{ route('user.index') }}">
+                                    <i class="fa fa-user"></i><b> User</b>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::is('anggota*') ? 'active' : '' }}" href="{{ route('anggota.index') }}">
-                                    <i class="fa fa-users"></i><b>Anggota</b>
+                                    <i class="fa fa-users"></i><b> Anggota</b>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('buku*') ? 'active' : '' }}" href="">
-                                    <i class="fa fa-book"></i><b>Buku</b>
+                                <a class="nav-link {{ Request::is('buku*') ? 'active' : '' }}" href="{{ route('buku.index') }}">
+                                    <i class="fa fa-book"></i><b> Buku</b>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('pinjam*') ? 'active' : '' }}" href="">
-                                    <i class="fa fa-tags"></i><b>Pinjam</b>
+                                <a class="nav-link {{ Request::is('pinjam*') ? 'active' : '' }}" href="{{ route('pinjam.index') }}">
+                                    <i class="fa fa-hand"></i><b> Pinjam</b>
                                 </a>
+                            </li>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::is('pengarang*') ? 'active' : '' }}" href="{{ route('pengarang.index') }}">
-                                    <i class="fa fa-user"></i><b>Pengarang</b>
+                                    <i class="fa fa-pen"></i><b> Pengarang</b>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('kategori*') ? 'active' : '' }}" href="">
-                                    <i class="fa fa-list"></i><b>Kategori</b>
+                                <a class="nav-link {{ Request::is('kategori*') ? 'active' : '' }}" href="{{ route('kategori.index') }}">
+                                    <i class="fa fa-list"></i><b> Kategori</b>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::is('denda*') ? 'active' : '' }}" href="{{ route('denda.index') }}">
-                                    <i class="fa fa-dollar-sign"></i><b>Denda</b>
+                                    <i class="fa fa-dollar-sign"></i><b> Denda</b>
                                 </a>
+                            </li>
                             <li class="nav-item">
-                                <a class=" nav-link active" aria-current="page" href="{{ route('penerbit.index') }}"> <i
-                                        class="fa-regular fa-building"></i>
-                                    Penerbit</a>
+                                <a class="nav-link {{ Request::is('penerbit*') ? 'active' : '' }}" href="{{ route('penerbit.index') }}">
+                                    <i class="fa-regular fa-building"></i><b> Penerbit</b>
+                                </a>
                             </li>
                         </ul>
                         <div class="nav-item">
-                            <a class="nav-link active" aria-current="page" onclick="return confirm('Yakin Logout?')"
+                            <a class="nav-link" aria-current="page" onclick="return confirm('Yakin Logout?')"
                                 href=""><i class="fa fa-logout"></i> Logout</a>
                         </div>
                     
                     </div>
                 </nav>
+
             <div class="container">
+
                 @yield('content')
+                
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

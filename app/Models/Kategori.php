@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Penerbit extends Model
+class Kategori extends Model
 {
+
     use HasFactory;
-    protected $table = 'tb_penerbit';
-    protected $fillable = ['nama_penerbit'];
+    protected $table ='kategori';
+    protected $fillable = [
+        'nama_kategori',
+    ];
 }

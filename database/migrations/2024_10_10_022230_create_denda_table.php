@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('denda', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_pinjam'); // Kolom untuk ID peminjaman
-            $table->unsignedBigInteger('id_anggota'); // Kolom untuk ID anggota
-            $table->decimal('jumlah_denda', 8, 2); // Jumlah denda dengan dua tempat desimal
-            $table->text('notes')->nullable(); // Catatan tambahan, nullable jika tidak ada
+            $table->unsignedBigInteger('id_anggota'); 
+            $table->decimal('jumlah_denda', 8, 2); 
+            $table->text('notes')->nullable(); 
             $table->timestamps();
+
+            $table->foreign('id_anggota')->references('id')->on('anggota')->onDelete('cascade');
+
         });
     }
 

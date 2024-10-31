@@ -1,10 +1,10 @@
 @extends('layout.app')
+@section('title'){{'Home'}} @endsection
 @section('content')
     @auth
         <p>Selamat Datang <b>{{ Auth::user()->username}}</b></p>
     @endauth
     <div class="row">
- ari
     <div class="col-md-3">
             <div class="card bg-primary text-white">
                 <div class="card-header">
@@ -73,7 +73,6 @@
                 </div>
             </div>
         </div>
-ari
         <div class="col-md-3">
             <div class="card bg-primary text-white">
                 <div class="card-header">

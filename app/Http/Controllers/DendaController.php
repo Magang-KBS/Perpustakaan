@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Anggota;
 use App\Models\Denda;
 use Illuminate\Http\Request;
 
@@ -19,18 +20,21 @@ class DendaController extends Controller
      // Method to show the form for creating a new denda record
      public function create()
      {
-         return view('denda.create'); // Return the create view
+        $anggota = Anggota::all(); 
+        return view('denda.create', compact('anggota'));
      }
  
      // Method to store a new denda record
      public function store(Request $request)
      {
          $request->validate([
-             'id_pinjam' => 'required',
-             'id_anggota' => 'required',
+             'id_anggota' => 'required|integer|exists:anggota,id',
              'jumlah_denda' => 'required|numeric',
              'notes' => 'nullable|string',
          ]);
+
+         $denda = str_replace(['Rp', '.', ','], '', $request->jumlah_denda);
+         $denda = (int) $denda;
  
          Denda::create($request->all()); // Create a new denda record
          return redirect()->route('denda.index')->with('success', 'Denda created successfully.'); // Redirect with success message
@@ -39,23 +43,29 @@ class DendaController extends Controller
      public function edit($id)
      {
          // Gunakan find() untuk mengambil satu objek denda berdasarkan id
-         $denda = Denda::find($id);
-         
-         // Kirim objek tunggal ke view
-         return view('denda.edit', compact('denda'));
-     }
+         $denda = Denda::findOrFail($id);
+         $anggota = Anggota::all();
+         return view('denda.edit', compact('denda', 'anggota'));
+    }
  
      public function update(Request $request, $id)
      {
-         $denda = Denda::find($id);
-         $denda->update($request->all());
-         return redirect()->route('denda.index')->with(['message'=>'Data Berhasil diperbarui']);
+         $request->validate([
+            'id_anggota' => 'required|integer|exists:anggota,id',
+            'jumlah_denda' => 'required|numeric',
+            'notes' => 'nullable|string',
+        ]);
+        $denda = Denda::find($id);
+        $denda->update($request->all());
+        return redirect()->route('denda.index')->with('success', 'Denda berhasil diperbarui');
      }
  
      // Method to delete a denda record
      public function destroy(Denda $id)
      {
          $id->delete();
+         $buku = Denda::findOrFail($id    );
+         $buku->delete();
          return redirect()->route('denda.index')->with('message', 'Pengarang berhasil dihapus!'); // Redirect dengan pesan sukses
      }
     

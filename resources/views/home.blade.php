@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('title'){{'Home'}} @endsection
 @section('content')
     @auth
         <p>Selamat Datang <b>{{ Auth::user()->username}}</b></p>
@@ -72,8 +73,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- <div class="col-md-3">
+        <div class="col-md-3">
             <div class="card bg-primary text-white">
                 <div class="card-header">
                     <i class="fa-solid fa-users"></i> Jumlah Pengarang

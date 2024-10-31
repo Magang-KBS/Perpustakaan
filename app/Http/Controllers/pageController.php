@@ -15,20 +15,10 @@ class pageController extends Controller
         
         $title = 'Home';
         $jumlah_anggota = Anggota::count();
-        $jumlah_penerbit = Penerbit::count();
-        return view('home', compact('title', 'jumlah_anggota', 'jumlah_penerbit'));
-    
-
-        $jumlah_pengarang = Pengarang::count();       
-        return view('home', compact('title', 'jumlah_anggota','jumlah_pengarang'));
         $jumlah_pengarang = Pengarang::count();      
-        $jumlah_denda = Denda::count();       
-        return view('home', compact('title', 'jumlah_anggota','jumlah_pengarang','jumlah_denda'));
-
-}}
-
-        $jumlah_penerbit = Penerbit::count();
-        return view('home', compact('title', 'jumlah_anggota', 'jumlah_penerbit'));
-        return view('home', compact('title', 'jumlah_anggota'));
-
+        $jumlah_denda = Denda::count();  
+        $jumlah_penerbit = Penerbit::count();     
+        return view('home', compact('title', 'jumlah_anggota','jumlah_pengarang','jumlah_denda','jumlah_penerbit'));
+    }   
+}
 

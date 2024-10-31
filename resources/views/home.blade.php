@@ -5,6 +5,7 @@
         <p>Selamat Datang <b>{{ Auth::user()->username }}</b></p>
     @endauth
     <div class="row">
+
         {{--  <div class="col-md-3">
             <div class="card bg-primary text-white">
                 <div class="card-header">
@@ -52,7 +53,7 @@
         <div class="col-md-3">
             <div class="card bg-success text-white">
                 <div class="card-header">
-                    <i class="fa-solid fa-book"></i> Jumlah Penerbit
+                    <i class=" fa-solid fa-book "></i> Jumlah Penerbit
                 </div>
                 <div class="card-body">
                     <h3>{{ $jumlah_penerbit }} Penerbit</h3>

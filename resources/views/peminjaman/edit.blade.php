@@ -38,10 +38,11 @@
                             value="{{ old('id_anggota', $peminjaman->id_anggota) }}">
                     </div>
                     <div class="mb-3">
-                        <label>Id Petugas</label>
-                        <input class="form-control" type="number" name="id_petugas"
-                            value="{{ old('id_petugas', $peminjaman->id_petugas) }}">
+                        <label>Buku</label>
+                        <input class="form-control" type="text" name="buku"
+                            value="{{ old('buku', $peminjaman->buku) }}">
                     </div>
+
                     <div class="mb-3">
                         <label>Status</label>
                         <input class="form-control" type="text" name="status"

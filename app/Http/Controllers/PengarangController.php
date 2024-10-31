@@ -10,44 +10,56 @@ class PengarangController extends Controller
 {
     public function index(Request $request)
     {
+
+        $title = 'pengarang'; // Define the title
         $q = $request->query('q');
         $pengarangs = pengarang::where('nama_pengarang', 'like', '%' . $q . '%')
             ->paginate(5)
             ->withQueryString();
         $no = $pengarangs->firstItem();
-        return view('pengarang.index', compact('pengarangs'));
+        return view('pengarang.index', compact('title', 'pengarangs', 'q', 'no')); // Pass the $title variable
     }
 
     public function create()
     {
-        return view('pengarang.create');
+        $title = 'Tambah pengarang';
+        $pengarangs = pengarang::orderBy('nama_pengarang')->get();
+        return view('pengarang.create', compact('title', 'pengarangs'));
     }
-
+    public function show(string $id)
+    {
+        //
+    }
     public function store(Request $request)
     {
-        // Validasi input
         $request->validate([
-            'nama_pengarang' => 'required|string|max:255'
+            'nama_pengarang' => 'required',
+            'no_telepon' => 'required',
+            'email' => 'required|email',
         ]);
-
-        // Menyimpan data ke database
-        $pengarang =  new Pengarang($request->only('nama_pengarang', 'id'));
+        $pengarang = new pengarang($request->all());
         $pengarang->save();
-
-        return redirect()->route('pengarang.index')->with('message', 'Pengarang berhasil ditambahkan!');
-    }
-
-    public function destroy(Pengarang $id)
-    {
-        $id->delete();
-        return redirect()->route('pengarang.index')->with('message', 'Pengarang berhasil dihapus!'); // Redirect dengan pesan sukses
+        return redirect()->route('pengarang.index')->with(['message' => "Data Berhasil ditambahkan"]);
     }
 
     public function edit($id)
     {
-        $id = 'Ganti Pengarang';
-        $pengarang = Pengarang::where('id,$id')->first();
+        $title = 'Ubah pengarang';
+        $pengarang = pengarang::where('id', $id)->first();
+        return view('pengarang.edit', compact('title', 'pengarang'));
+    }
 
-        return view('pengarang.index', compact('id', 'pengarang'));
+    public function update(Request $request, $id)
+    {
+        // dd($request->all(),$id);
+        $pengarang = pengarang::find($id);
+        $pengarang->update($request->all());
+        return redirect()->route('pengarang.index')->with(['message' => 'Data Berhasil diperbarui']);
+    }
+
+    public function destroy(pengarang $id)
+    {
+        $id->delete();
+        return redirect()->route('pengarang.index')->with(['message' => 'Data Berhasil dihapus!']);
     }
 }

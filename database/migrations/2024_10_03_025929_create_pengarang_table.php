@@ -12,10 +12,11 @@ return new class extends Migration
         Schema::create('pengarang', function (Blueprint $table) {
             $table->id();
             $table->string('nama_pengarang', 255);
+            $table->string('no_telepon', 255);
+            $table->string('email', 255);
             $table->timestamps();
         });
     }
-
 
     public function down(): void
     {

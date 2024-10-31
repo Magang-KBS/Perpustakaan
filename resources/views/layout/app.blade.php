@@ -30,15 +30,6 @@
             transition: transform 0.25s ease-out;
         }
 
-        .nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        .nav-link:hover {
-            color: #007bff;
-        }
-
         .nav-link.active::after {
             transform: scaleX(1);
             /* Untuk mempertahankan efek garis bawah */
@@ -50,7 +41,6 @@
             /* Warna teks saat menu aktif */
         }
     </style>
-
 </head>
 
 <body class="container">
@@ -90,12 +80,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('buku*') ? 'active' : '' }}" href=" ">
+                        <a class="nav-link {{ Request::is('buku*') ? 'active' : '' }}"
+                            href="{{ route('buku.index') }}">
                             <i class="fa fa-book-open"></i><b>Buku</b>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('pengarang*') ? 'active' : '' }}" href="  ">
+                        <a class="nav-link {{ Request::is('pengarang*') ? 'active' : '' }}"
+                            href=" {{ route('pengarang.index') }} ">
                             <i class="fa fa-user"></i><b>Pengarang</b>
                         </a>
                     </li>
@@ -105,19 +97,19 @@
                         </a>
                     </li>
                 </ul>
-                <form action="{{ route('logout') }}" method="POST">
-                    <a class="nav-link" onclick="return confirm('Yakin Logout?')" href=" ">
-                        @csrf
-                        <button type="submit">Logout</button>
+                <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Yakin Logout?')">
+                    @csrf
+                    <button type="submit" class="nav-link"
+                        style="background:none; border:none; color:inherit; cursor:pointer;">
+                        Logout
+                    </button>
                 </form>
-
             </div>
         </div>
     </nav>
     <div class="container">
         @yield('content')
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>

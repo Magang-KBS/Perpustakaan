@@ -29,17 +29,33 @@
                         <input class="form-control" type="date" name="tgl_kembali" value="{{ old('tgl_kembali') }}">
                     </div>
                     <div class="mb-3">
-                        <label>Id Anggota</label>
-                        <input class="form-control" type="number" name="id_anggota" value="{{ old('id_anggota') }}">
+                        <label for="id_anggota">Id Anggota</label>
+                        <select class="form-control" name="id_anggota" id="id_anggota" required>
+                            <option value="">-Pilih Anggota-</option>
+                            @foreach ($anggota as $item)
+                                <option value="{{ $item->id }}">{{ $item->nama_anggota }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3">
-                        <label>Id Petugas</label>
-                        <input class="form-control" type="number" name="id_petugas" value="{{ old('id_petugas') }}">
+                        <label for="buku">Buku</label>
+                        <select class="form-control" name="buku" id="buku" required>
+                            <option value="">-Pilih Buku-</option>
+                            @foreach ($buku as $item)
+                                <option value="{{ $item->id }}">{{ $item->kode_buku }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label>Status</label>
-                        <input class="form-control" type="text" name="status" value="{{ old('status') }}">
+                        <select class="form-control" name="status">
+                            <option value="">-Pilih Status-</option>
+                            <option value="dipinjam" {{ old('status') == 'dipinjam' ? 'selected' : '' }}>Dipinjam</option>
+                            <option value="dikembalikan" {{ old('status') == 'dikembalikan' ? 'selected' : '' }}>
+                                Dikembalikan</option>
+                        </select>
                     </div>
+
                     <div class="mb-3">
                         <button class="btn btn-primary">Simpan</button>
                         <a class="btn btn-danger" href="{{ route('peminjaman.index') }}">Kembali</a>

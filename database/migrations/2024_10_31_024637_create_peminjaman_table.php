@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -14,9 +15,13 @@ return new class extends Migration
             $table->string('tgl_pinjam', 255);
             $table->string('tgl_max_pinjam', 255);
             $table->string('tgl_kembali', 255);
+            $table->string('buku', 255);
             $table->unsignedBigInteger('id_anggota'); // Foreign key untuk anggota
-            $table->unsignedBigInteger('id_petugas'); // Foreign key untuk petugas
+            $table->unsignedBigInteger('buku'); // Foreign key untuk anggota
             $table->string('status', 255);
+            // Menambahkan foreign key untuk id_anggota
+            $table->foreign('id_anggota')->references('id')->on('tb_anggota')->onDelete('cascade');
+            $table->foreign('buku')->references('id')->on('buku')->onDelete('cascade');
             $table->timestamps();
         });
     }

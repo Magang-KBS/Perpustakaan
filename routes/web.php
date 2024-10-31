@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\pageController;
 use App\Http\Controllers\PeminjamanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PengarangController;
-
 use App\Http\Controllers\PenerbitController;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,13 +20,12 @@ Route::post('/logout', function () {
 
 
 
-
 Route::get('/pengarang', [PengarangController::class, 'index'])->name('pengarang.index');
 Route::get('/pengarang/create', [PengarangController::class, 'create'])->name('pengarang.create');
 Route::post('/pengarang/store', [PengarangController::class, 'store'])->name('pengarang.store');
 Route::delete('/pengarang/{id}', [PengarangController::class, 'destroy'])->name('pengarang.destroy');
-Route::get('/pengarang/edit', [PengarangController::class, 'edit'])->name('pengarang.edit');
-Route::put("pengarang/{id}", [PengarangController::class, 'update'])->name('pengarang.update');
+Route::get('/pengarang/{id}/edit', [PengarangController::class, 'edit'])->name('pengarang.edit');
+Route::put('/pengarang/{id}', [PengarangController::class, 'update'])->name('pengarang.update');
 
 Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');
 Route::get('/penerbit/create', [PenerbitController::class, 'create'])->name('penerbit.create');
@@ -48,4 +48,17 @@ Route::get('peminjaman/edit/{id}', [peminjamanController::class, 'edit'])->name(
 Route::delete('/peminjaman/{id}', [peminjamanController::class, 'destroy'])->name('peminjaman.destroy');
 Route::put('/peminjaman/{id}', [peminjamanController::class, 'update'])->name('peminjaman.update');
 
-Route::get('home', [pageController::class, 'home'])->name('home');
+Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
+Route::get('/buku/create', [BukuController::class, 'create'])->name('buku.create');
+Route::post('/buku/store', [BukuController::class, 'store'])->name('buku.store');
+Route::get('buku/edit/{id}', [BukuController::class, 'edit'])->name('buku.edit');
+Route::delete('/buku/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
+Route::put('/buku/{id}', [BukuController::class, 'update'])->name('buku.update');
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+
+Route::get('home', [PageController::class, 'home'])->name('home');
+
+Route::resource('buku', BukuController::class);

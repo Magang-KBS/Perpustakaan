@@ -49,9 +49,6 @@
                                 @method('DELETE')
                                 <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button>
                             </form>
-
-
-
                         </td>
                     </tr>
                 @endforeach

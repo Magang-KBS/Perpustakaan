@@ -1,5 +1,5 @@
 @extends('layout.app')
-<title>Perpustakaan Peminjaman</title>
+<title>Perpustakaan Buku</title>
 @section('content')
     @if (session()->has('message'))
         <p class="alert alert-info">{{ session('message') }}</p>
@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="col">
-                    <a class="btn btn-primary" href="{{ route('peminjaman.create') }}">Tambah</a>
+                    <a class="btn btn-primary" href="{{ route('buku.create') }}">Tambah</a>
                 </div>
 
             </form>
@@ -25,41 +25,37 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>Tanggal Pinjaman</th>
-                        <th>Tanggal Maksimal Pinjaman</th>
-                        <th>Tanggal Kembali</th>
-                        <th>Id Anggota</th>
-                        <th>Buku</th>
-                        <th>Status</th>
+                        <th>Kode buku</th>
+                        <th>Judul</th>
+                        <th>Kategori</th>
+                        <th>Pengarang</th>
+                        <th>Penerbit</th>
+                        <th>Tahun terbit</th>
+                        <th>Stok</th>
                         <th>Aksi</th>
-
                     </tr>
                 </thead>
-                <?php //$no = 1;
+                <?php $no = 1;
                 ?>
-                @foreach ($peminjamans as $peminjaman)
+                @foreach ($bukus as $buku)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $peminjaman->tgl_pinjam }}</td>
-                        <td>{{ $peminjaman->tgl_max_pinjam }}</td>
-                        <td>{{ $peminjaman->tgl_kembali }}</td>
-                        <td>{{ $peminjaman->buku }}</td>
-                        <td>{{ $peminjaman->id_anggota }}</td>
-                        <td>{{ $peminjaman->status }}</td>
+                        <td>{{ $buku->kode_buku }}</td>
+                        <td>{{ $buku->judul }}</td>
+                        <td>{{ $buku->kategori }}</td>
+                        <td>{{ $buku->pengarang }}</td>
+                        <td>{{ $buku->penerbit }}</td>
+                        <td>{{ $buku->tahun_terbit }}</td>
+                        <td>{{ $buku->stok }}</td>
 
                         <td>
-
-                            <a class="btn btn-sm btn-warning"
-                                href="{{ route('peminjaman.edit', $peminjaman->id) }}">Ubah</a>
-
-                            <form method="POST" class="d-inline" action="{{ route('peminjaman.destroy', $peminjaman) }}">
+                            <form action="{{ route('buku.destroy', $buku->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button>
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Apakah Anda yakin ingin menghapus pengarang ini?')">Hapus</button>
                             </form>
-
-
-
+                            <a href="{{ route('buku.edit', $buku->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         </td>
                     </tr>
                 @endforeach
@@ -67,9 +63,9 @@
             </table>
 
         </div>
-        @if ($peminjamans->hasPages())
+        @if ($bukus->hasPages())
             <div class="card-footer">
-                {{ $peminjamans->links() }}
+                {{ $bukus->links() }}
             </div>
         @endif
     </div>

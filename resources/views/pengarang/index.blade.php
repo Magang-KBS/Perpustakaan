@@ -14,7 +14,6 @@
             <div>
                 <button onclick="location.reload();" class="btn btn-success">Refresh</button>
             </div>
-
         </form>    
     </div>
     <div class="table-responsive">

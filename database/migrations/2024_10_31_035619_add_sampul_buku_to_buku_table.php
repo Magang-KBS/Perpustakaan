@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_anggota', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_anggota');
-            $table->string('no_telepon',15);
-            $table->string('nim')->nullable();
-            $table->string('email');
-            $table->timestamps();
+        Schema::table('buku', function (Blueprint $table) {
+            $table->string('sampul_buku')->nullable();
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_anggota');
+        Schema::table('buku', function (Blueprint $table) {
+            $table->dropColumn('sampul_buku');
+        });
     }
 };

@@ -47,15 +47,12 @@ class PengarangController extends Controller
 
     public function edit($id)
     {
-        // Cari pengarang berdasarkan ID
         $pengarang = Pengarang::find($id);
     
         // Cek jika pengarang tidak ditemukan
         if (!$pengarang) {
             return redirect()->route('pengarang.index')->with('error', 'Pengarang tidak ditemukan');
         }
-    
-        // Kirim data ke view
         return view('pengarang.edit', compact('pengarang'));
     }
     

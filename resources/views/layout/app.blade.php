@@ -30,7 +30,16 @@
             transition: transform 0.25s ease-out;
         }
 
-        .nav-link.active::after {
+        <<<<<<< HEAD=======.nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .nav-link:hover {
+            color: #007bff;
+        }
+
+        >>>>>>>35b039139aa87f46ae1f819b63331532dafcbca0 .nav-link.active::after {
             transform: scaleX(1);
             /* Untuk mempertahankan efek garis bawah */
             transform-origin: bottom left;
@@ -41,6 +50,7 @@
             /* Warna teks saat menu aktif */
         }
     </style>
+    <<<<<<< HEAD=======>>>>>>> 35b039139aa87f46ae1f819b63331532dafcbca0
 </head>
 
 <body class="container">
@@ -96,23 +106,81 @@
                             <i class="fa fa-list"></i><b>Kategori</b>
                         </a>
                     </li>
+                    <<<<<<< HEAD=======>>>>>>> 16fccd3 (CRUD penerbit)
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href="{{ route('anggota.index') }}"> <i
+                                    class="fa fa-users"></i> Anggota</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-book"></i>
+                                Buku</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href=""><i class="fa fa-tags"></i>
+                                Pinjam</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href=""> <i class="fa fa-list"></i>
+                                Kategori</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link active" aria-current="page" href="{{ route('penerbit.index') }}"> <i
+                                    class="fa-regular fa-building"></i>
+                                Penerbit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('anggota*') ? 'active' : '' }}"
+                                href="{{ route('anggota.index') }}">
+                                <i class="fa fa-users"></i><b>Anggota</b>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('penerbit*') ? 'active' : '' }}"
+                                href="{{ route('penerbit.index') }}">
+                                <i class="fa fa-book"></i><b>Penerbit</b>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('buku*') ? 'active' : '' }}" href=" ">
+                                <i class="fa fa-book-open"></i><b>Buku</b>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('pengarang*') ? 'active' : '' }}" href=" ">
+                                <i class="fa fa-user"></i><b>Pengarang</b>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('kategori*') ? 'active' : '' }}" href=" ">
+                                <i class="fa fa-list"></i><b>Kategori</b>
+                            </a>
+                        </li>
                 </ul>
-                <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Yakin Logout?')">
+                <<<<<<< HEAD <form action="{{ route('logout') }}" method="POST"
+                    onsubmit="return confirm('Yakin Logout?')">
                     @csrf
                     <button type="submit" class="nav-link"
                         style="background:none; border:none; color:inherit; cursor:pointer;">
                         Logout
                     </button>
-                </form>
+                    </form>
+                    =======
+                    <div class="nav-item">
+                        <a class="nav-link" onclick="return confirm('Yakin Logout?')" href=" ">
+                            <i class="fa fa-logout"></i><b>Logout</b>
+                        </a>
+                    </div>
+                    >>>>>>> 35b039139aa87f46ae1f819b63331532dafcbca0
             </div>
         </div>
     </nav>
     <div class="container">
         @yield('content')
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+    <<<<<<< HEAD=======>>>>>>> 35b039139aa87f46ae1f819b63331532dafcbca0
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>

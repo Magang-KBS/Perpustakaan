@@ -5,7 +5,6 @@
         <p>Selamat Datang <b>{{ Auth::user()->username }}</b></p>
     @endauth
     <div class="row">
-
         {{--  <div class="col-md-3">
             <div class="card bg-primary text-white">
                 <div class="card-header">
@@ -53,7 +52,10 @@
         <div class="col-md-3">
             <div class="card bg-success text-white">
                 <div class="card-header">
-                    <i class=" fa-solid fa-book "></i> Jumlah Penerbit
+                    <<<<<<< HEAD <i class=" fa-solid fa-book "></i> Jumlah Penerbit
+                        =======
+                        <i class="fa-solid fa-book"></i> Jumlah Penerbit
+                        >>>>>>> 35b039139aa87f46ae1f819b63331532dafcbca0
                 </div>
                 <div class="card-body">
                     <h3>{{ $jumlah_penerbit }} Penerbit</h3>
@@ -63,7 +65,7 @@
                 </div>
             </div>
         </div>
-        {{--  
+        <<<<<<< HEAD {{--  
         <div class="col-md-3">
             <div class="card bg-success text-white">
                 <div class="card-header">
@@ -78,9 +80,9 @@
                 </div>
             </div>
         </div>
-        --}}
+        --}}=======>>>>>>> 35b039139aa87f46ae1f819b63331532dafcbca0
 
-        {{-- <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="card bg-warning text-white">
                     <div class="card-header">
                         <i class="fa-solid fa-list"></i> Jumlah Kategori
@@ -129,4 +131,4 @@
             }]
         });
     </script> --}}
-    @endsection
+        @endsection
